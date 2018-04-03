@@ -45,6 +45,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 51, 0));
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/computer_add.png"))); // NOI18N
         jMenu1.setText("Cadastrar");
