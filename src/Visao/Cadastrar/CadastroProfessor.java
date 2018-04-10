@@ -94,7 +94,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +155,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 510, -1));
 
-        setSize(new java.awt.Dimension(528, 375));
+        setSize(new java.awt.Dimension(526, 375));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

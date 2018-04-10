@@ -47,9 +47,13 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 51, 0));
 
+        jMenuBar1.setBackground(new java.awt.Color(151, 51, 0));
+
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/computer_add.png"))); // NOI18N
         jMenu1.setText("Cadastrar");
 
+        jMenuItem1.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_add.png"))); // NOI18N
         jMenuItem1.setText("Professor(a)");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,9 +65,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/magnifier.png"))); // NOI18N
         jMenu2.setText("Consultar");
 
+        jMenuItem2.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_go.png"))); // NOI18N
         jMenuItem2.setText("Professor(a)");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,9 +81,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/table_edit.png"))); // NOI18N
         jMenu3.setText("Alterar");
 
+        jMenuItem3.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_edit.png"))); // NOI18N
         jMenuItem3.setText("Professor(a)");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -89,9 +97,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/delete.png"))); // NOI18N
         jMenu4.setText("Excluir");
 
+        jMenuItem4.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_delete.png"))); // NOI18N
         jMenuItem4.setText("Professor(a)");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {

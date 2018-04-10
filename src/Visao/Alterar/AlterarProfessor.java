@@ -67,6 +67,7 @@ public class AlterarProfessor extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 102, 102));
 
         jPanel1.setBackground(new java.awt.Color(153, 51, 0));
 

@@ -54,6 +54,7 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setExtendedState(1);
 
         jPanel3.setBackground(new java.awt.Color(153, 51, 0));
 
