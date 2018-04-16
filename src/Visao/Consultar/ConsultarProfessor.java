@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author CLAUDIO
+ * @author Maftraw
  */
 public class ConsultarProfessor extends javax.swing.JFrame {
 
