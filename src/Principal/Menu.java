@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -49,13 +50,14 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 51, 0));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/Logo MAFTRAW Enterprise.png"))); // NOI18N
+
         jMenuBar1.setBackground(new java.awt.Color(151, 51, 0));
 
         jMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/computer_add.png"))); // NOI18N
         jMenu1.setText("Cadastrar");
 
-        jMenuItem1.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_add.png"))); // NOI18N
         jMenuItem1.setText("Professor(a)");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +73,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/magnifier.png"))); // NOI18N
         jMenu2.setText("Consultar");
 
-        jMenuItem2.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_go.png"))); // NOI18N
         jMenuItem2.setText("Professor(a)");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/table_edit.png"))); // NOI18N
         jMenu3.setText("Alterar");
 
-        jMenuItem3.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_edit.png"))); // NOI18N
         jMenuItem3.setText("Professor(a)");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/delete.png"))); // NOI18N
         jMenu4.setText("Excluir");
 
-        jMenuItem4.setForeground(new java.awt.Color(255, 255, 255));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_delete.png"))); // NOI18N
         jMenuItem4.setText("Professor(a)");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +118,13 @@ public class Menu extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/Pc_icon.png"))); // NOI18N
         jMenu5.setText("Equipamentos");
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/Eq_icon.png"))); // NOI18N
         jMenuItem5.setText("Visualizar ");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem5);
 
         jMenuBar1.add(jMenu5);
@@ -130,11 +135,17 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(102, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel1)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,6 +171,11 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ExcluirProfessor().setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new Equipamentos().setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +213,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -209,4 +226,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
+
+    private static class Equipamentos {
+
+        public Equipamentos() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
