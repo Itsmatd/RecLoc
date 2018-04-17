@@ -8,6 +8,7 @@ package Principal;
 import Visao.Alterar.AlterarProfessor;
 import Visao.Cadastrar.CadastroProfessor;
 import Visao.Consultar.ConsultarProfessor;
+import Visao.Equipamentos.Equipamentos;
 import Visao.Excluir.ExcluirProfessor;
 
 /**
@@ -58,6 +59,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/computer_add.png"))); // NOI18N
         jMenu1.setText("Cadastrar");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_add.png"))); // NOI18N
         jMenuItem1.setText("Professor(a)");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +75,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/magnifier.png"))); // NOI18N
         jMenu2.setText("Consultar");
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_go.png"))); // NOI18N
         jMenuItem2.setText("Professor(a)");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +91,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/table_edit.png"))); // NOI18N
         jMenu3.setText("Alterar");
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_edit.png"))); // NOI18N
         jMenuItem3.setText("Professor(a)");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +107,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/delete.png"))); // NOI18N
         jMenu4.setText("Excluir");
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/user_delete.png"))); // NOI18N
         jMenuItem4.setText("Professor(a)");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +123,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/Pc_icon.png"))); // NOI18N
         jMenu5.setText("Equipamentos");
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/Eq_icon.png"))); // NOI18N
         jMenuItem5.setText("Visualizar ");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -168,13 +174,16 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-        new ExcluirProfessor().setVisible(true);
+        // TODO add your handling code here:  
+        ExcluirProfessor telaVisualExcluirProfessor = new ExcluirProfessor();
+        telaVisualExcluirProfessor.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        new Equipamentos().setVisible(true);
+        Equipamentos telaVisualEquipamento = new Equipamentos();
+        telaVisualEquipamento.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
@@ -227,13 +236,4 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 
-    private static class Equipamentos {
-
-        public Equipamentos() {
-        }
-
-        private void setVisible(boolean b) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
 }
