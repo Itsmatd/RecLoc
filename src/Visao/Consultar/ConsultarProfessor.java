@@ -109,6 +109,12 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Pesquisar por Nome");
 
+        jNomePesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNomePesquisaActionPerformed(evt);
+            }
+        });
+
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Img/icons 1/magnifier.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,6 +317,10 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jNomePesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNomePesquisaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jNomePesquisaActionPerformed
 
     /**
      * @param args the command line arguments
