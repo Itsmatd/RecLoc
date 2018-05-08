@@ -13,7 +13,7 @@ import Visao.Excluir.ExcluirProfessor;
 
 /**
  *
- * @author CLAUDIO
+ *
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -25,6 +25,7 @@ public class Menu extends javax.swing.JFrame {
         setTitle("Cadastro de Professores");
         
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -8,7 +8,7 @@ package DAO;
 import java.sql.*;
 /**
  *
- * @author CLAUDIO
+ * @author Maftraw
  */
 public class ExecuteSQL {
     
