@@ -2,7 +2,9 @@ package Visao.Cadastrar;
 
 import DAO.Conexao;
 import DAO.FuncionarioDAO;
+import DAO.ProfessorDAO;
 import Modelo.Funcionario;
+import Modelo.Professor;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
@@ -169,14 +171,14 @@ public class CadastroProfessor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!", "", JOptionPane.WARNING_MESSAGE);
         }else{
             Connection con = Conexao.AbrirConexao();
-            FuncionarioDAO sql = new FuncionarioDAO(con);
-            Funcionario f = new Funcionario();
+            ProfessorDAO sql = new ProfessorDAO(con);
+            Professor p = new Professor();
             
-            f.setNome(nome);
-            f.setLogin(login);
-            f.setSenha(senha);
+            p.setNome(nome);
+            p.setLogin(login);
+            p.setSenha(senha);
             
-            sql.Inserir_Funcionario(f);
+            sql.Inserir_Professor(p);
             Conexao.FecharConexao(con);
             
             jTF_Nome.setText("");

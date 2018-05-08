@@ -2,7 +2,9 @@ package Visao.Consultar;
 
 import DAO.Conexao;
 import DAO.FuncionarioDAO;
+import DAO.ProfessorDAO;
 import Modelo.Funcionario;
+import Modelo.Professor;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -256,10 +258,10 @@ public class ConsultarProfessor extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO bd = new FuncionarioDAO(con);
+        ProfessorDAO bd = new ProfessorDAO(con);
         
         List<Funcionario> lista = new ArrayList<Funcionario>();
-        lista = bd.Pesquisar_Nome_Funcionario(jNomePesquisa.getText());
+        lista = bd.Pesquisar_Nome_Professor(jNomePesquisa.getText());
         
         DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
         /*
@@ -271,7 +273,7 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         }
         int i = 0;
                 
-        for(Funcionario tab : lista){
+        for(Professor tab : lista){
             tbm.addRow(new String[1]);
             jTable1.setValueAt(tab.getCod(),i,0);
             jTable1.setValueAt(tab.getNome(), i, 1);

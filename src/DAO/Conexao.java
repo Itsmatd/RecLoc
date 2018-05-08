@@ -17,7 +17,7 @@ public class Conexao {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://127.0.0.1:3333/funcionario2";
+            String url = "jdbc:mysql://127.0.0.1:3333/recloc";
             con = DriverManager.getConnection(url,"root", "admin");
                    
         } catch (Exception e) {

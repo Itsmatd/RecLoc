@@ -5,9 +5,12 @@
  */
 package DAO;
 
+import Modelo.Funcionario;
 import Modelo.Professor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
 
 
 /**
@@ -33,8 +36,12 @@ public class ProfessorDAO extends ExecuteSQL{
             }else{
                 return "Erro ao Cadastrar Professor!";
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             return e.getMessage();
         }
+    }
+
+    public List<Funcionario> Pesquisar_Nome_Professor(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
