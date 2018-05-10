@@ -43,37 +43,9 @@ public class ProfessorDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
-
-    public List<Professor> Pesquisar_Nome_Professor(String text) {
-        String sql = "SELECT codigo,nome,login,senha FROM professor";
-        List<Professor> lista = new ArrayList<Professor>();
-        
-        try {
-            PreparedStatement ps = getCon().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            if(rs != null){
-                while(rs.next()){
-                    Professor p = new Professor();
-                    p.setCod(rs.getInt(1));
-                    p.setNome(rs.getString(2));
-                    p.setLogin(rs.getString(3));
-                    p.setSenha(rs.getString(4));
-                    
-                    lista.add(p);
-                }
-            }else{
-                return null;
-            }
-        } catch (SQLException e) {
-            return null;
-        }
-        return null;
-        
-    }
-
+    
     public List<Professor> Listar_Professor() {
-        String sql = "SELECT codigo,nome,login,senha FROM professor";
+        String sql = "SELECT cod_Professor,nome_Professor,login_Professor,senha_Professor FROM professor";
         List<Professor> lista = new ArrayList<Professor>();
         
         try {
@@ -96,9 +68,36 @@ public class ProfessorDAO extends ExecuteSQL{
             }
         } catch (SQLException e) {
             return null;
-        }
-        
+        }     
     }
+    
+    public List<Professor> Pesquisar_Nome_Professor(String nome){
+        String sql = "SELECT cod_Professor, nome_Professor, login_Professor, senha_Professor FROM professor WHERE nome LIKE '" + nome + "%'";
+        List<Professor> lista = new ArrayList<Professor>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Professor p = new Professor();
+                    p.setCod(rs.getInt(1));
+                    p.setNome(rs.getString(2));
+                    p.setLogin(rs.getString(3));
+                    p.setSenha(rs.getString(4));
+                    
+                    lista.add(p);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
     public List<Professor> Pesquisar_Cod_Professor(int parseInt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
