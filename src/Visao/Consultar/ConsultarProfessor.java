@@ -1,14 +1,11 @@
 package Visao.Consultar;
 
 import DAO.Conexao;
-import DAO.FuncionarioDAO;
 import DAO.ProfessorDAO;
-import Modelo.Funcionario;
 import Modelo.Professor;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -30,10 +27,10 @@ public class ConsultarProfessor extends javax.swing.JFrame {
     
     public void AtualizaTable(){
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO bd = new FuncionarioDAO(con);
+        ProfessorDAO bd = new ProfessorDAO(con);
         
-        List<Funcionario> lista = new ArrayList<Funcionario>();
-        lista = bd.Listar_Funcionario();
+        List<Professor> lista = new ArrayList<Professor>();
+        lista = bd.Listar_Professor();
         
         DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
         /*
@@ -45,7 +42,7 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         }
         int i = 0;
                 
-        for(Funcionario tab : lista){
+        for(Professor tab : lista){
             tbm.addRow(new String[1]);
             jTable1.setValueAt(tab.getCod(),i,0);
             jTable1.setValueAt(tab.getNome(), i, 1);
@@ -260,7 +257,7 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         Connection con = Conexao.AbrirConexao();
         ProfessorDAO bd = new ProfessorDAO(con);
         
-        List<Funcionario> lista = new ArrayList<Funcionario>();
+        List<Professor> lista = new ArrayList<Professor>();
         lista = bd.Pesquisar_Nome_Professor(jNomePesquisa.getText());
         
         DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
@@ -288,10 +285,10 @@ public class ConsultarProfessor extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO bd = new FuncionarioDAO(con);
+        ProfessorDAO bd = new ProfessorDAO(con);
         
-        List<Funcionario> lista = new ArrayList<Funcionario>();
-        lista = bd.Pesquisar_Cod_Funcionario(Integer.parseInt(jCodigoPesquisa.getText()));
+        List<Professor> lista = new ArrayList<Professor>();
+        lista = bd.Pesquisar_Cod_Professor(Integer.parseInt(jCodigoPesquisa.getText()));
         
         DefaultTableModel tbm = (DefaultTableModel) jTable1.getModel();
         /*
@@ -303,7 +300,7 @@ public class ConsultarProfessor extends javax.swing.JFrame {
         }
         int i = 0;
                 
-        for(Funcionario tab : lista){
+        for(Professor tab : lista){
             tbm.addRow(new String[1]);
             jTable1.setValueAt(tab.getCod(),i,0);
             jTable1.setValueAt(tab.getNome(), i, 1);
