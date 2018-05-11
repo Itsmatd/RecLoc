@@ -47,7 +47,7 @@ public class ProfessorDAO extends ExecuteSQL{
     public List<Professor> Listar_Professor() {
         String sql = "SELECT cod_Professor,nome_Professor,login_Professor,senha_Professor FROM professor";
         List<Professor> lista = new ArrayList<Professor>();
-        
+          System.out.println(lista);
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -71,14 +71,18 @@ public class ProfessorDAO extends ExecuteSQL{
         }     
     }
     
-    public List<Professor> Pesquisar_Nome_Professor(String nome){
-        String sql = "SELECT cod_Professor, nome_Professor, login_Professor, senha_Professor FROM professor WHERE nome LIKE '" + nome + "%'";
+    public List<Professor> Pesquisar_Nome_Professor(String nome)
+    {
+        
+        String sql = "SELECT cod_Professor, nome_Professor, login_Professor, senha_Professor FROM professor WHERE nome_Professor LIKE '%" + nome + "%'";
         List<Professor> lista = new ArrayList<Professor>();
         
+      
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             
+             
             if(rs != null){
                 while(rs.next()){
                     Professor p = new Professor();
@@ -93,12 +97,41 @@ public class ProfessorDAO extends ExecuteSQL{
             }else{
                 return null;
             }
-        } catch (Exception e) {
+        } 
+        catch (SQLException e)
+        {
             return null;
         }
     }
-    
-    public List<Professor> Pesquisar_Cod_Professor(int parseInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public List<Professor> Pesquisar_Cod_Professor(int cod) {
+         String sql = "SELECT cod_Professor, nome_Professor, login_Professor, senha_Professor FROM professor WHERE cod_Professor = '" + cod + "'";
+        List<Professor> lista = new ArrayList<Professor>();
+        
+      
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+             
+            if(rs != null){
+                while(rs.next()){
+                    Professor p = new Professor();
+                    p.setCod(rs.getInt(1));
+                    p.setNome(rs.getString(2));
+                    p.setLogin(rs.getString(3));
+                    p.setSenha(rs.getString(4));
+                    
+                    lista.add(p);
+                }
+            return lista;
+            }else{
+                return null;
+            }
+        } 
+        catch (SQLException e)
+        {
+            return null;
+        }  
     }
 }
