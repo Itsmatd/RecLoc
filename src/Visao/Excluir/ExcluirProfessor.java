@@ -1,8 +1,8 @@
 package Visao.Excluir;
 
 import DAO.Conexao;
-import DAO.FuncionarioDAO;
-import Modelo.Funcionario;
+import DAO.ProfessorDAO;
+import Modelo.Professor;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +24,13 @@ public class ExcluirProfessor extends javax.swing.JFrame {
     
     private void AtualizaCom(){
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
-        List<Funcionario> lista = new ArrayList<Funcionario>();
-        lista = sql.ListaComboFuncionario();
+        ProfessorDAO sql = new ProfessorDAO(con);
+        List<Professor> lista = new ArrayList<Professor>();
+        lista = sql.ListaComboProfessor();
        
         
-        for(Funcionario f : lista){
-            jComboBox1.addItem(f.getNome());
+        for(Professor p : lista){
+            jComboBox1.addItem(p.getNome());
         }
         Conexao.FecharConexao(con);
     }
@@ -171,8 +171,8 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         String codigo = jCB_cod.getText();
         
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
-        Funcionario f = new Funcionario();
+        ProfessorDAO sql = new ProfessorDAO(con);
+        Professor p = new Professor();
         
         int confirma = JOptionPane.showConfirmDialog(null, "Deseja realmente Excluir"
         + "\n (" + codigo + ")", "",
@@ -180,8 +180,8 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         
         if(confirma == 0){
             int cod = Integer.parseInt(codigo);
-            f.setCod(cod);
-            sql.Excluir_Funcionario(f);
+            p.setCod(cod);
+            sql.Excluir_Professor(p);
             Conexao.FecharConexao(con);
             
             
@@ -193,14 +193,14 @@ public class ExcluirProfessor extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
-        List<Funcionario> lista = new ArrayList<Funcionario>();
+        ProfessorDAO sql = new ProfessorDAO(con);
+        List<Professor> lista = new ArrayList<Professor>();
         String nome = jComboBox1.getSelectedItem().toString();
         
-        lista = sql.Pesquisar_Nome_Funcionario(nome);
+        lista = sql.Pesquisar_Nome_Professor(nome);
         
-        for(Funcionario f : lista){
-            int a = f.getCod();
+        for(Professor p : lista){
+            int a = p.getCod();
             jCB_cod.setText("" + a);
         }
         Conexao.FecharConexao(con);

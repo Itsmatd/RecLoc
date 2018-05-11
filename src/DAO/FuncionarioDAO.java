@@ -130,8 +130,7 @@ public class FuncionarioDAO extends ExecuteSQL{
         
          Funcionario f = new Funcionario();
          
-        try {
-            
+        try {     
             String sql = "SELECT * FROM funcionario WHERE codigo =  " + cod + "";
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

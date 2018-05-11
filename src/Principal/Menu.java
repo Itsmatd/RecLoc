@@ -169,7 +169,6 @@ public class Menu extends javax.swing.JFrame {
         ConsultarProfessor telaConsultarProfessor = new ConsultarProfessor();
         telaConsultarProfessor.setVisible(true);
         
-        new ConsultarProfessor().setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -181,6 +180,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:  
         ExcluirProfessor telaVisualExcluirProfessor = new ExcluirProfessor();
         telaVisualExcluirProfessor.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed

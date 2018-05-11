@@ -1,12 +1,9 @@
 package Visao.Alterar;
 
 import DAO.Conexao;
-import DAO.FuncionarioDAO;
-import Modelo.Funcionario;
-import java.sql.Array;
+import DAO.ProfessorDAO;
+import Modelo.Professor;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,16 +35,16 @@ public class AlterarProfessor extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jTF_pesquisar_cod_funcionario = new javax.swing.JTextField();
+        jTF_pesquisar_cod_professor = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTF_alterar_cod_funcionario = new javax.swing.JTextField();
+        jTF_alterar_cod_professor = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTF_alterar_nome_funcionario = new javax.swing.JTextField();
+        jTF_alterar_nome_professor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTF_alterar_login_funcionario = new javax.swing.JTextField();
+        jTF_alterar_login_professor = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTF_alterar_senha_funcionario = new javax.swing.JPasswordField();
+        jTF_alterar_senha_professor = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -82,6 +79,12 @@ public class AlterarProfessor extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Digite o Código");
 
+        jTF_pesquisar_cod_professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_pesquisar_cod_professorActionPerformed(evt);
+            }
+        });
+
         jButton1.setFont(new java.awt.Font("Georgia", 0, 12)); // NOI18N
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +101,7 @@ public class AlterarProfessor extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
-                .addComponent(jTF_pesquisar_cod_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTF_pesquisar_cod_professor, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -109,7 +112,7 @@ public class AlterarProfessor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTF_pesquisar_cod_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_pesquisar_cod_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -137,10 +140,16 @@ public class AlterarProfessor extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel1.setText("Código");
 
-        jTF_alterar_cod_funcionario.setEditable(false);
+        jTF_alterar_cod_professor.setEditable(false);
 
         jLabel2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel2.setText("Nome");
+
+        jTF_alterar_nome_professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_alterar_nome_professorActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel3.setText("Login");
@@ -207,19 +216,19 @@ public class AlterarProfessor extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTF_alterar_cod_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTF_alterar_cod_professor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(jTF_alterar_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTF_alterar_nome_professor, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTF_alterar_senha_funcionario)
-                            .addComponent(jTF_alterar_login_funcionario))))
+                            .addComponent(jTF_alterar_senha_professor)
+                            .addComponent(jTF_alterar_login_professor))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -229,23 +238,23 @@ public class AlterarProfessor extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTF_alterar_cod_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_alterar_cod_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTF_alterar_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_alterar_nome_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel3))
-                    .addComponent(jTF_alterar_login_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_alterar_login_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel4))
-                    .addComponent(jTF_alterar_senha_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTF_alterar_senha_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -256,14 +265,14 @@ public class AlterarProfessor extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String codigo = jTF_pesquisar_cod_funcionario.getText();
+        String codigo = jTF_pesquisar_cod_professor.getText();
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
+        ProfessorDAO sql = new ProfessorDAO(con);
         
         int cod = Integer.parseInt(codigo);
         
-        Funcionario f = sql.Consulta_Funcionario(cod);
-        if( f.getCod() != cod){
+        Professor p = sql.Consulta_Professor(cod);
+        if( p.getCod() != cod){
             Conexao.FecharConexao(con);
         }
         if(codigo.equals("")){
@@ -271,20 +280,20 @@ public class AlterarProfessor extends javax.swing.JFrame {
                     "", JOptionPane.WARNING_MESSAGE);
         }
         
-        jTF_alterar_cod_funcionario.setText("");
-        jTF_alterar_nome_funcionario.setText("");
-        jTF_alterar_login_funcionario.setText("");
-        jTF_alterar_senha_funcionario.setText("");
+        jTF_alterar_cod_professor.setText("");
+        jTF_alterar_nome_professor.setText("");
+        jTF_alterar_login_professor.setText("");
+        jTF_alterar_senha_professor.setText("");
         
         //InserirDados(cod);
-        jTF_pesquisar_cod_funcionario.setText("");
+        jTF_pesquisar_cod_professor.setText("");
        
         
         
-        jTF_alterar_cod_funcionario.setText("" + f.getCod());
-        jTF_alterar_nome_funcionario.setText(f.getNome());
-        jTF_alterar_login_funcionario.setText(f.getLogin());
-        jTF_alterar_senha_funcionario.setText(f.getSenha());
+        jTF_alterar_cod_professor.setText("" + p.getCod());
+        jTF_alterar_nome_professor.setText(p.getNome());
+        jTF_alterar_login_professor.setText(p.getLogin());
+        jTF_alterar_senha_professor.setText(p.getSenha());
         
         
         Conexao.FecharConexao(con);
@@ -292,32 +301,32 @@ public class AlterarProfessor extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        String codigo = jTF_alterar_cod_funcionario.getText();
-        String nome = jTF_alterar_nome_funcionario.getText();
-        String login = jTF_alterar_login_funcionario.getText();
-        String senha = jTF_alterar_senha_funcionario.getText();
+        String codigo = jTF_alterar_cod_professor.getText();
+        String nome = jTF_alterar_nome_professor.getText();
+        String login = jTF_alterar_login_professor.getText();
+        String senha = jTF_alterar_senha_professor.getText();
         
         if(nome.equals("") || login.equals("") || senha.equals("")){
             JOptionPane.showMessageDialog(null, "Nenhum campo pode estar vazio!",
                     "", JOptionPane.WARNING_MESSAGE);
         }else{
             Connection con = Conexao.AbrirConexao();
-            FuncionarioDAO sql = new FuncionarioDAO(con);
+            ProfessorDAO sql = new ProfessorDAO(con);
             int cod = Integer.parseInt(codigo);
-            Funcionario f = new Funcionario();
+            Professor p = new Professor();
             
-            f.setCod(cod);
-            f.setNome(nome);
-            f.setLogin(login);
-            f.setSenha(senha);
+            p.setCod(cod);
+            p.setNome(nome);
+            p.setLogin(login);
+            p.setSenha(senha);
             
-            sql.Alterar_Funcionario(f);
+            sql.Alterar_Professor(p);
             Conexao.FecharConexao(con);
             
-            jTF_alterar_cod_funcionario.setText("");
-            jTF_alterar_nome_funcionario.setText("");
-            jTF_alterar_login_funcionario.setText("");
-            jTF_alterar_senha_funcionario.setText("");
+            jTF_alterar_cod_professor.setText("");
+            jTF_alterar_nome_professor.setText("");
+            jTF_alterar_login_professor.setText("");
+            jTF_alterar_senha_professor.setText("");
             
             
             
@@ -326,16 +335,24 @@ public class AlterarProfessor extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jTF_alterar_cod_funcionario.setText("");
-            jTF_alterar_nome_funcionario.setText("");
-            jTF_alterar_login_funcionario.setText("");
-            jTF_alterar_senha_funcionario.setText("");
+        jTF_alterar_cod_professor.setText("");
+            jTF_alterar_nome_professor.setText("");
+            jTF_alterar_login_professor.setText("");
+            jTF_alterar_senha_professor.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTF_pesquisar_cod_professorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_pesquisar_cod_professorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_pesquisar_cod_professorActionPerformed
+
+    private void jTF_alterar_nome_professorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_alterar_nome_professorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_alterar_nome_professorActionPerformed
 
     
     /**
@@ -389,10 +406,10 @@ public class AlterarProfessor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTF_alterar_cod_funcionario;
-    private javax.swing.JTextField jTF_alterar_login_funcionario;
-    private javax.swing.JTextField jTF_alterar_nome_funcionario;
-    private javax.swing.JPasswordField jTF_alterar_senha_funcionario;
-    private javax.swing.JTextField jTF_pesquisar_cod_funcionario;
+    private javax.swing.JTextField jTF_alterar_cod_professor;
+    private javax.swing.JTextField jTF_alterar_login_professor;
+    private javax.swing.JTextField jTF_alterar_nome_professor;
+    private javax.swing.JPasswordField jTF_alterar_senha_professor;
+    private javax.swing.JTextField jTF_pesquisar_cod_professor;
     // End of variables declaration//GEN-END:variables
 }

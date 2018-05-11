@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -45,9 +46,9 @@ public class ProfessorDAO extends ExecuteSQL{
     }
     
     public List<Professor> Listar_Professor() {
-        String sql = "SELECT cod_Professor,nome_Professor,login_Professor,senha_Professor FROM professor";
+        String sql = "SELECT cod_Professor,nome_Professor,login_Professor,senha_Professor FROM professor ORDER BY nome_Professor";
         List<Professor> lista = new ArrayList<Professor>();
-          System.out.println(lista);
+       
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -133,5 +134,80 @@ public class ProfessorDAO extends ExecuteSQL{
         {
             return null;
         }  
+    }
+
+    public Professor Consulta_Professor(int cod){
+         Professor p = new Professor();
+         
+        try {     
+            String sql = "SELECT * FROM professor WHERE cod_Professor =  " + cod + "";
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+           
+            
+            if(rs != null){
+                while(rs.next()){
+                                      
+                    p.setCod(rs.getInt(1));
+                    p.setNome(rs.getString(2));
+                    p.setLogin(rs.getString(3));
+                    p.setSenha(rs.getString(4));
+                }
+            }
+            
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        if(p.getCod() == cod){
+            JOptionPane.showMessageDialog(null, "Professor encontrado com sucesso!");
+        }else{
+        JOptionPane.showMessageDialog(null, "Professor não encontrado!");    
+        }
+        return p;
+    }
+
+    public void Alterar_Professor(Professor p){
+        String sql = "UPDATE professor SET nome_Professor = ?, login_Professor = ?, senha_Professor = ?"
+                + "WHERE cod_Professor = ?";
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setString(1, p.getNome());
+            ps.setString(2, p.getLogin());
+            ps.setString(3, p.getSenha());
+            ps.setString(4, "" + p.getCod());
+            
+            if(ps.executeUpdate() > 0){
+                JOptionPane.showMessageDialog(null,"Professor Atualizado com Sucesso!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Erro ao Atualizar o Professor!");
+            }
+        } catch (Exception e) {
+           e.getMessage();
+        }
+    }
+        public List<Professor> ListaComboProfessor(){
+        String sql = "SELECT nome_Professor FROM professor ORDER BY nome_Professor";
+        List<Professor> lista = new ArrayList<Professor>();
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Professor p = new Professor();
+                    p.setNome(rs.getString(1));
+                    lista.add(p);
+                }
+                return lista;
+            }else{
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }  
+
+    public void Excluir_Professor(Professor p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
