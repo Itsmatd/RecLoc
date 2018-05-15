@@ -206,8 +206,22 @@ public class ProfessorDAO extends ExecuteSQL{
             return null;
         }
     }  
-
-    public void Excluir_Professor(Professor p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public String Excluir_Professor(Professor p){
+        String sql = "DELETE FROM professor WHERE cod_Professor = ?";
+    
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, p.getCod());
+            
+            if(ps.executeUpdate() > 0){
+                return "Professor Excluído com Sucesso!";
+            }else{
+                return "Erro ao Excluir!";
+            }
+        } catch (SQLException e) {
+            return e.getMessage();
+        }
+    
     }
 }

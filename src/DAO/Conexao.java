@@ -29,7 +29,7 @@ public class Conexao {
     public static void FecharConexao(Connection con){
         try {
             con.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
         

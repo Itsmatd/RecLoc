@@ -1,5 +1,4 @@
 package Visao.Excluir;
-
 import DAO.Conexao;
 import DAO.ProfessorDAO;
 import Modelo.Professor;
@@ -27,8 +26,7 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         ProfessorDAO sql = new ProfessorDAO(con);
         List<Professor> lista = new ArrayList<Professor>();
         lista = sql.ListaComboProfessor();
-       
-        
+               
         for(Professor p : lista){
             jComboBox1.addItem(p.getNome());
         }
@@ -101,8 +99,8 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jButton1)
+                .addGap(117, 117, 117)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addGap(139, 139, 139))
@@ -113,7 +111,7 @@ public class ExcluirProfessor extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -121,6 +119,11 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         jLabel1.setText("Código");
 
         jCB_cod.setEditable(false);
+        jCB_cod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_codActionPerformed(evt);
+            }
+        });
 
         jComboBox1.setMaximumRowCount(10);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -177,17 +180,14 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         int confirma = JOptionPane.showConfirmDialog(null, "Deseja realmente Excluir"
         + "\n (" + codigo + ")", "",
         JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
+         
         if(confirma == 0){
             int cod = Integer.parseInt(codigo);
             p.setCod(cod);
             sql.Excluir_Professor(p);
-            Conexao.FecharConexao(con);
-            
-            
+            Conexao.FecharConexao(con);    
         }
         dispose();
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -207,35 +207,15 @@ public class ExcluirProfessor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jCB_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_codActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCB_codActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ExcluirProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ExcluirProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ExcluirProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ExcluirProfessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+    public static void main(String args[])
+        {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ExcluirProfessor().setVisible(true);
